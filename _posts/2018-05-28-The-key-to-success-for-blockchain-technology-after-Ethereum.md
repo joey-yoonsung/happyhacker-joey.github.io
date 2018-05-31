@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  "BlockChain 3'rd Generation"
+title:  "다음 세대 블록체인을 위한 성공의 열쇠"
 date:   2018-05-28 13:18:49 +0900
 categories: blockchain
 ---
 
-# BlockChain 3'rd Generation
+# **_The key to success for blockchain technology after Ethereum_**
 
-#### **_The key to success for blockchain technology after Ethereum_**
 
-## Introduction
+
+### Introduction
 2008년, 사토시 나카모토(가명)가 발표한 비트코인 플랫폼(network)은 기존의 중앙집중형 거래 시스템이 가진 신뢰모델의 비효율성(유지비용과 수수료)과 취약점(double-spending problem)을 극복할 수 있는 P2P 전자 화폐 시스템을 제시했다.
 2009년, 비트코인 개발자 그룹은 오픈소스로 비트코인 네트워크를 공개했다.
 이후, 프로그래머들의 채굴 경쟁 또는 네트워크 보안관점에서 해커들의 도전으로 네트워크는 성장했다. 
@@ -37,7 +37,7 @@ categories: blockchain
 이러한 변화는 우리 사회를 떠받치고 있던 기존의 사회, 경제구조까지 탈중앙화하도록 바꿀 수 있다는 비전을 제시했다.
 
 
-## Mission for Next Generation
+### Mission for Next Generation
 
 하지만 윌리엄 무가야가 책(비즈니스 블록체인)에서 예견한 것처럼, 이더리움으로 대표되는 2세대 블록체인과 이를 이용한 서비스들은 현실의 규제장벽과 사회적 수용의 문제에 부딪히고 있다.
 기존의 서비스들을 대체하고 사회경제구조까지 탈중앙화할 수 있겠다는 비전은 제시했지만, 기존의 서비스들과의 경쟁에서 우위를 점하기도 힘든 현실이다.
@@ -53,7 +53,7 @@ categories: blockchain
 다음 세대가 관심 가져야 할 것은 이제 구체적으로 구현가능해진 블록체인 네트워크에서의 신뢰와 서비스로 어떻게 비즈니스의 성공을 달성할 것이냐이다.
  
      
-## What to do
+### What to do
 
 블록체인 사업에서 성공하고 싶은 이들은 먼저 사용자(target user)의 관심에 관심을 가져야 한다.
 서비스를 이용하는 고객들은 대부분 블록체인이 무엇인지 관심 없다. 
@@ -88,9 +88,9 @@ whitepaper 와
 
 성공적 : ICO 이후에도 사업이 실제로 진행되어서 ICO 이상의 현실가치를 가지는 사업.
 
-##### EOS 에 대해서
+####### EOS 에 대해서
 
 
-## Next Generation
+### Next Generation
 
 business specific, domain specific
