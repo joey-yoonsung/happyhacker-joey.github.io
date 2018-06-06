@@ -2,12 +2,15 @@
 layout: post
 title:  "다음 세대 블록체인을 위한 성공의 열쇠"
 date:   2018-05-28 13:18:49 +0900
-categories: blockchain
+categories: kr/blockchain
 ---
 
 # **_The key to success for blockchain technology after Ethereum_**
 
-
+블록체인분야에서 이더리움 이후에 블록체인 3세대(또는 3.0)의 주인공이 누가 될 것인가에 대해 소프트웨어 기술자들 뿐만 아니라 금융 투자자들도 귀추를 주목하고 있다.
+혹자는 기술적 관점에서 어떤 기술을 갖춰야 블록체인 3.0 시대를 열 수 있을지를 설명하기도 한다. (cloud node, high scalability, interoperability 등.. )
+본 글에서 3세대 블록체인을 새로운 관점에서 정의해보았다.
+그리고 이렇게 정의한 다음 세대 블록체인 비즈니스에서 성공하기 위해서는 무엇이 필요할지 이야기해보고자 한다.   
 
 ### Introduction
 2008년, 사토시 나카모토(가명)가 발표한 비트코인 플랫폼(network)은 기존의 중앙집중형 거래 시스템이 가진 신뢰모델의 비효율성(유지비용과 수수료)과 취약점(double-spending problem)을 극복할 수 있는 P2P 전자 화폐 시스템을 제시했다.
