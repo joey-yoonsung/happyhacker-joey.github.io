@@ -5,7 +5,7 @@ date:   2018-06-06 15:26:49 +0900
 categories: kr/blockchain
 ---
 
-# **_블록체인 합의 알고리즘 기초 (합의 알고리즘을 이해하기 위한 기초지식)._**
+# **_블록체인 합의 알고리즘 기초 (블록체인에서의 합의 알고리즘을 이해하기 위한 기초지식)._**
 
 본 글에서는 블록체인에서 사용하는 합의 알고리즘을 이해하기에 앞서 합의 알고리즘의 카테고리를 나눠보고, 태생적으로 어떤 장단점(또는 이슈)이 있는지 간단하게 알아보도록 한다.
 앞으로 연재할 합의 알고리즘과 관련된 글을 이해하기 위한 기초 지식이 될 글이다.
@@ -41,7 +41,8 @@ Voting-based
 자연스럽게 Lottery-based 합의 알고리즘의 주요 해결 이슈는 속도가 되고, Voting-based 합의 알고리즘은 scalability 임을 알 수 있다.
 앞으로 블록체인 네트워크 또는 특정 합의 알고리즘을 분석하거나 새로 만들려고 할 때, 합의 방식이 이런 태생적인 단점들을 어떻게 극복하려고 하는지에 관심을 가져보는 것도 좋을 것 같다.
 
-Hyperledger WG(Working Group) 에서 내놓은 분석 자료를 봐도 그렇고 다른 글들을 보아도 Lottery-based 는 public 과 permissioned 로 분류했는데 반해 Voiting-based 는 permissioned 영역에만 속해있다.
+Hyperledger Architecture WG(Working Group) 에서 내놓은 [분석 자료](https://www.hyperledger.org/wp-content/uploads/2017/08/Hyperledger_Arch_WG_Paper_1_Consensus.pdf)를 봐도 그렇고 
+다른 분석 글들을 보아도 Lottery-based 는 public 과 permissioned 로 분류했는데 반해 Voiting-based 는 permissioned 영역에만 속해있다.
 그렇다면 public 영역에서 voting-based algorithm 은 구현할 수가 없는 것인가? 이는 재미있는 연구 주제이다.
 
 public 영역에서 voting-based 합의가 가능하게 하는 이슈는 단순 알고리즘이 아니라 거버넌스와 연결지어서 생각해서 풀 수도 있는 문제이다.
