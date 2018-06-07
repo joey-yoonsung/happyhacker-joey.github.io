@@ -44,17 +44,24 @@ Voting-based
 
 ### View 2 : Broadcast-based vs Chain-based
 
-HashGraph, BChain, 또는 BChain을 조금 변형한 Hyperledger-Iroha 의 Sumeragi 합의 알고리즘이 Chain-based 에 해당한다.
-그리고 기존의 PoW, PoS, PBFT, RBFT 등 많은 합의 알고리즘이 Broadcast 방식이다. 
-하지만 앞으로 Lottery-based 방식이고 Chain-based 인 알고리즘도 나오지 않을까 해서 굳이 다른 view point 로 구분하였다. 
+Broadcast 는 트랜잭션이나 블록을 합의를 위해서 모든(혹은 다수) 노드에게 broadcasting 을 수행한다. 이에 반해 Chain-based 알고리즘은 받은 메세지를 한 노드에서 다른 한 노드로 chaining 방식으로 전파한다고 보면 된다.
+앞서 언급한 PoW, PoS, PBFT, RBFT 등 많은 합의 알고리즘이 Broadcast 방식이다. 
 
 Broadcast 와 비교한 Chain-based 알고리즘의 장단점은 다음과 같다.
  * 장점 : high throughput. 그리고 동시에 요청이 증가할 수록 Broadcast-based 보다 latency 가 적다.
  * 단점 : 네트워크의 장애/공격에 대해서 덜 resilient 하다.(적절한 한국어 단어가 없는거 같은데, 설명하자면 회복이 힘들다. 잘 대처하지 못한다. 로 이해하면 되겠다.)
     * 그래서 fail 이 발생하면 성능 손해를 많이 봐서 Broadcast 보다 안좋다.
+ * 예 : Chain-based 도 View 1 에서 언급한 Lottery-based 와 Voting-based 로 나눌 수 있다. 아직은 voting-based 위주로 연구가 되어왔다.
+    * voting-based : Alphi-chain, BChain, Hyperledger-Iroha 의 Sumeragi 
+    * lottery-based : Hashgraph
 
-따라서 BChain 의 이슈는 fail 상황에 얼마나 잘 대처하는지가 주요 이슈이다.
-Lottery-based & Chain-based 성질의 합의 알고리즘을 연구해보는 것도 좋은 연구주제이다.
+위와 같은 성질에 따라서 Chain-based 합의 알고리즘은 fail 상황에 얼마나 잘 대처하는지가 주요 이슈이다.
+
+지금까지는 voting 방식의 Chain-based 알고리즘 위주로 연구가 진행되었다.
+하지만 이것도 Broadcast-based 합의 알고리즘이 활발히 연구된 것에 비해서는 연구 풀이 빈약하다.
+Lottery-based & Chain-based 성질의 합의 알고리즘은 Hashgraph 외에 별다른 것을 찾지 못했다.
+예로 든 Hashgraph 는 사실 논문형식으로 자세히 나와있는 것도 없고 자신의 성질을 Lottery-based & Chain-based 로 밝히지도 않았다.
+따라서 Lottery-based & Chain-based 성질의 합의 알고리즘을 개척하고 발전시켜 보는 것도 좋은 연구주제이다.
 
 ### View 3 : relation with Governance
 
@@ -75,7 +82,7 @@ Lottery-based & Chain-based 성질의 합의 알고리즘을 연구해보는 것
 따라서 합의 알고리즘을 단순히 computational logic 으로만 바라보면 블록체인 네트워크에 적용하고 운영할 때 큰 위험이 따를 것이다.
 합의 알고리즘 또한 이러한(네트워크가 유기체라는) 맥락하에서 바라보아야 하고, 이 또한 재미있는 연구주제이다.
 
-다가오는 미래에는 많은 사회학자, 심리학자들이 블록체인 네트워크 상에서 사회와 사람에 대한 연구를 수행할 것으로 예상된다.
+다가오는 미래에는 많은 사회학자, 심리학자들이 블록체인 네트워크 상에서 사회와 사람에 대한 연구를 수행할 것으로 기대된다.
 블록체인에 기록된 기록 자체가 신뢰성 있는 데이터 이기 때문에 기존 연구방식에서는 발견할 수 없었던 새롭고 재미있는 연구를 수행할 수 있을 것이다.
 사실 소프트웨어를 전공하기 전에 사회심리학을 공부하고 싶었는데, 블록체인을 연구하면서 나중에 여유가 된다면 이 주제로 박사과정을 해보고 싶다는 생각도 들었다. 
 소프트웨어를 하면서 소프트웨어를 기초로 이렇게 재미있게 해볼 수 있는게 많다는 것을 느낄때 참 행복하다.
