@@ -41,6 +41,13 @@ Voting-based
 자연스럽게 Lottery-based 합의 알고리즘의 주요 해결 이슈는 속도가 되고, Voting-based 합의 알고리즘은 scalability 임을 알 수 있다.
 앞으로 블록체인 네트워크 또는 특정 합의 알고리즘을 분석하거나 새로 만들려고 할 때, 합의 방식이 이런 태생적인 단점들을 어떻게 극복하려고 하는지에 관심을 가져보는 것도 좋을 것 같다.
 
+Hyperledger WG(Working Group) 에서 내놓은 분석 자료를 봐도 그렇고 다른 글들을 보아도 Lottery-based 는 public 과 permissioned 로 분류했는데 반해 Voiting-based 는 permissioned 영역에만 속해있다.
+그렇다면 public 영역에서 voting-based algorithm 은 구현할 수가 없는 것인가? 이는 재미있는 연구 주제이다.
+
+public 영역에서 voting-based 합의가 가능하게 하는 이슈는 단순 알고리즘이 아니라 거버넌스와 연결지어서 생각해서 풀 수도 있는 문제이다.
+사실 EOS 에서 선택하고 있는 DPOS(Delegated Proof of Stake)도 PoS 작업을 21 개의 BP 에 위임하고 이 위임 권한을 투표로 결정한다는 점에서 voting 방식이 결합된 것이냐 라고 생각할 수도 있다.
+하지만 블록/거래의 합의 과정에 투표는 들어가지 않으므로 voting-based 합의는 아니라고 생각할 수도 있다. 
+
 
 ### View 2 : Broadcast-based vs Chain-based
 
