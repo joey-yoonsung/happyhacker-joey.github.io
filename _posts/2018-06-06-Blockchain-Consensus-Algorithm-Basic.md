@@ -44,7 +44,7 @@ Voting-based
 
 ### View 2 : Broadcast-based vs Chain-based
 
-Aliph-Chain, BChain, 또는 BChain을 조금 변형한 Hyperledger-Iroha 의 Sumeragi 합의 알고리즘이 Chain-based 에 해당한다.
+HashGraph, BChain, 또는 BChain을 조금 변형한 Hyperledger-Iroha 의 Sumeragi 합의 알고리즘이 Chain-based 에 해당한다.
 그리고 기존의 PoW, PoS, PBFT, RBFT 등 많은 합의 알고리즘이 Broadcast 방식이다. 
 하지만 앞으로 Lottery-based 방식이고 Chain-based 인 알고리즘도 나오지 않을까 해서 굳이 다른 view point 로 구분하였다. 
 
