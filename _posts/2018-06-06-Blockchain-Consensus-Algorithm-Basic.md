@@ -31,8 +31,10 @@ Lottery-based
         * PoW를 사용하는 비트코인이나, 이더리움은 평균 6개의 블럭 정도가 더 붙은 시점에서 longest chain 을 선택할 수 있다고 판단한다. 하지만 이렇게 되면 일반 상용 서비스를 제공하기에는 너무 긴 합의 시간이다.     
  * 예 : PoW, PoS, PoET.
  
+ **하지만 lottery based consensus 가 노드가 늘어난다고 합의시간이 늘어나지 않는 것은 아니다. 합의에 참여하는 노드가 늘어날수록 분기가 생길 가능성이 커지고 그에 따라서 longest chain 을 선택하는 시간이 오래 걸리기 때문이다. EOS 가 DPOS 를 이용해서 합의에 참여하는 노드를 줄인 점으로도 미루어 볼 수 있다.**
+ 
 Voting-based
- * 동작방식 : 네트워크에 참여한 노드들 중 다수가 트랜잭션이나 블록에 대해서 validate 하면 바로 합의와 최종 승인이 이루어진다. 
+ * 동작방식 : 네트워크에 참여한 노드들 중 다수가 트랜잭션이나 블록에 대해서 validate 하면 바로 합의와 최종 승인이 이루어진다.
  * 장점 : 최종 승인까지 low-latency.
  * 단점 : 노드중 다수에게 메세지를 보내고, 또 장애가 허용되지 않을 만큼의 다수 노드의 validation 까지 해야하니까 네트워크에 노드가 많아질수록 합의자체가 느려진다.
  * 예 : PBFT, RBFT, Paxos             
@@ -46,8 +48,14 @@ Hyperledger Architecture WG(Working Group) 에서 내놓은 [분석 자료](http
 그렇다면 public 영역에서 voting-based algorithm 은 구현할 수가 없는 것인가? 이는 재미있는 연구 주제이다.
 
 public 영역에서 voting-based 합의가 가능하게 하는 이슈는 단순 알고리즘이 아니라 거버넌스와 연결지어서 생각해서 풀 수도 있는 문제이다.
-사실 EOS 에서 선택하고 있는 DPOS(Delegated Proof of Stake)도 PoS 작업을 21 개의 BP 에 위임하고 이 위임 권한을 투표로 결정한다는 점에서 voting 방식이 결합된 것이냐 라고 생각할 수도 있다.
-하지만 블록/거래의 합의 과정에 투표는 들어가지 않으므로 voting-based 합의는 아니라고 생각할 수도 있다. 
+실제로 Zilliqa 에서는 PBFT 류의 합의 알고리즘을 거버넌스의 통제아래 사용해서 scalability 문제를 풀어가고 있다. 
+거래를 네트워크 전체가 합의하는 것이 아닌 네트워크에 분산된 각 shard 에서 PBFT 로 합의하고, 각 shard 의 대표 노드만 전체 네트워크의 데이터를 동기화하기 위해서 합의하는 PBFT 에 참여한다.
+이런 방식으로 일정규모(약 800노드)의 네트워크에서 voting based 의 장점인 빠른 합의를 보장하고, 전체 네트워크에서의 데이터 정합성도 유지할 수 있다.
+
+EOS의 합의 방식 또한 재미있다. EOS에서 선택하고 있는 DPOS(Delegated Proof of Stake)도 PoS 작업을 21 개의 BP 에 위임하고 이 위임 권한을 투표로 결정한다는 점에서 voting 방식이 결합된 것이냐 라고 생각할 수도 있다.
+하지만 블록/거래의 합의 과정에 투표는 들어가지 않으므로 voting-based 합의는 아니라고 생각할 수도 있다.
+
+ 
 
 
 ### View 2 : Broadcast-based vs Chain-based
