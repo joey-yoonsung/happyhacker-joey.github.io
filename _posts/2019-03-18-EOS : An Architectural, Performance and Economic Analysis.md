@@ -66,14 +66,74 @@ eosio.cdt 저장소는 eosio-cpp 컴포넌트를 포함하고 있는데, 이것�
 
 
 
-
 [resource 할당 방법](https://medium.com/leclevietnam/eos-resource-allocation-98bb6cb84497)
 
 ![Fig.1 Overview of EOS System Architecture]({{ "/images/EOS:An Architectural, Performance and Analysis/Fig.1 Overview of EOS System Architecture.png" | absolute_url}})
 ![Fig.2 How Accounts Fit Into the EOS System]({{ "/images/EOS:An Architectural, Performance and Analysis/Fig.2 How Accounts Fit Into the EOS System.png" | absolute_url}})
+
+### C. Transactions and Contracts
+#### 1) Overview
+#### 2) Contracts
+Smart Contract 는 actions 과 action handler 조합의 집합.
+Action handler는 action 을 전송하는 것을 통해서 다른 계정들에 접근하도록 고안되었다.
+이 action은 각 계정에 연동되어있는 개인 데이터베이스와 상호작용할 수 있다.
+블록생성자는 메모리와 자원 사용에 집중된 action의 충돌을 피하는데 최적화하여 거래를 스케줄링한다. 
+
+#### 3) Web Assembly
+WASM은 많은 high level 언어들을 컴파일하는데 사용된다.
+WASM은 EOS VM 이 이해할 수 있는 명령어 형태이다.
+이것은 Web Assembly module을 통해서 EOS library 와 WASM binary code 사이의 상호작용이 일어난다는 의미이다.
+
+#### 4) Components
+
+**Actions** : single atomic units of operation.
+Action 은 contract 와 계정 사이의 인터페이스를 나타낸다. 
+대부분의 EOS network 는 action 을 통해서 만들어진다.
+
+**Transactions** : Transaction(거래) 은 actions의 실행을 나타낸다.
+Transaction은 개별 액션 또는 여러개의 액션으로 구성되어있다.
+거래가 성공했다는 것은 EOS blockchain 안에 있는 어떤 상태가 변경되었다는 의미이다.
+Transaction 과 action 의 관계는 Fig.3 에 나타나있다.
+
 ![Fig.3 EOS Actions]({{ "/images/EOS:An Architectural, Performance and Analysis/Fig.3 EOS Actions.png" | absolute_url}})
+
+#### 5) Communications and Actions
+EOS contract 들은 현재의 actions 과 미래의 actions 사이의 의존성을 주어서 서로 커뮤니케이션/상호작용을 할 수 있다.
+contract들 사이에 일어나는 커뮤니케이션은 비동기적으로 일어난다.
+자원 분산 알고리즘의 다음 단계는 이러한 관점을 나타내도록 고안되었다.
+EOS 에서 contract는 노드에의 해서 등록되는 소프트웨어이다.
+EOS contract 를 전송하는 과정은 Fig.4 에 나타나있다.
+
 ![Fig.4 Contracts in the EOS System Architecture]({{ "/images/EOS:An Architectural, Performance and Analysis/Fig.4 Contracts in the EOS System Architecture.png" | absolute_url}})
+
+Contract들과 계정들은 개별 action 으로 커뮤니케이션하는 것으로 나타나있다.
+몇개의 action 이 조합되면 그것은 거래들에 담긴다.
+이렇게 생성된 거래는 action 들의 실행을 순차적으로 실행한다. Fig.5 를 보자.
+거래가 생성되고 응답은 hash 헝태로 받게 된다.
+노드가 거래의 응답과 hash를 받게되면, 그 거래는 블록 생성자에의해 처리될 가능성이 높아진다.
+하지만 100% confirm 된다는 의미는 아니다.
+
 ![Fig.5 Action Handlers Can Apply Multiple Contexts]({{ "/images/EOS:An Architectural, Performance and Analysis/Fig.5 Action Handlers Can Apply Multiple Contexts.png" | absolute_url}})
+
+거래는 Fig.6처럼 두가지 커뮤니케이션 모델로 구성된다.
+이 거래들은 즉각적인 관심을 요구하는 action들을 점진적으로 구성하는 것을 제공한다.
+반면에 deferred actions 은 더 복잡한 비즈니스 로직을 요구한다.
+
+
+6) Analysis
+EOS 는 전체 시스템을 구성하는대 contract based model 을 사용한다. 
+이 모델은 system contract 라는 형태로 프로토콜의 가장 낮은 레벨까지 스며든다
+EOS의 Contract 는 컴퓨팅 함수를 실행하기 위해 디자인된 전통적인 코드라인을 수행하는데 더 적합하다.
+Ethereum 의 컨트랙트는 이더리움 프로토콜 상에서만 구동되는 것을 제약하는 것과 대조적이다.
+EOS 의 블록 생성자들은 반드시 플러그인과 모듈들을 필수로 가져야 한다.
+Ethereum의 Smart Contract 는 직접적으로 state 전환과 value 전달, 그리고 그들의 경제 시스템을 결정하는 암호학적인 결정 알고리즘에 직접적으로 묶여있다.
+state 검증이 머클트리를 통해서.
+EOS 는 transaction 단위에서 X.
+
+* 요약 Ethereum 은 블록체인 시스템. EOS 는 분산화된 DBMS 시스템 
+
+
+
 ![Fig.6 Two Basic EOS Communication Models]({{ "/images/EOS:An Architectural, Performance and Analysis/Fig.6 Two Basic EOS Communication Models.png" | absolute_url}})
 
 
